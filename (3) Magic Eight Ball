@@ -1,0 +1,38 @@
+var userName = "BFox";
+
+userName? console.log(`Hello, ${userName}!`): console.log("Hello!");
+
+var userQuestion = "Will I be the best programmer?";
+
+userName? console.log(`${userName}\'s question is: ${userQuestion}`): console.log(`The question is: ${userQuestion}`);
+
+var randomNumber = Math.floor(Math.random() * 8);
+var eightBall = "";
+
+switch (randomNumber){
+  case 0:
+    eightBall = "It is certain";
+    break;
+  case 1:
+    eightBall = "It is decidely so";
+    break;
+  case 2:
+    eightBall = "Repy hazy try again";
+    break;
+  case 3:
+    eightBall = "Cannot predict now";
+    break;
+  case 4:
+    eightBall = "Do not count on it";
+    break;
+  case 5:
+    eightBall = "My sourced say no";
+    break;
+  case 6:
+    eightBall = "Outlook not so good";
+    break;
+  case 7:
+    eightBall = "Signs point to yes";
+    break;
+}
+console.log(`EightBall\'s response is: ${eightBall}.`);
