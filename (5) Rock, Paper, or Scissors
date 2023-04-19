@@ -1,0 +1,46 @@
+const getUserChoice = userInput => {
+  if (typeof userInput === "string"){ 
+    userInput = userInput.toLowerCase();
+  }
+  if (userInput === "rock" || userInput === "scissors" || userInput === "paper" || userInput === "bomb"){
+    return userInput;
+  } else {
+    console.log("Error, choice is not valid");
+  }
+}
+
+const getComputerChoice = () => {
+  const rand = Math.floor(Math.random()*3);
+  switch (rand) {
+    case 0:
+      return "rock";
+      break;
+    case 1:
+      return "scissors";
+      break;
+    case 2:
+      return "paper";
+      break;
+  }
+}
+
+//getUserChoice("rock");
+//console.log(getComputerChoice())
+
+const determineWinner = (userChoice, computerChoice) =>{
+  if (userChoice === computerChoice){
+    return "Game is tied";
+  } else if (userChoice === "rock" && computerChoice === "scissors" || userChoice === "paper" && computerChoice === "rock" || userChoice === "scissors" && computerChoice === "paper") {
+    return "You win!";
+  } else if (computerChoice === "rock" && userChoice === "scissors" || computerChoice === "paper" && userChoice === "rock" || computerChoice === "scissors" && userChoice === "paper") {
+    return "You lose. :(";
+  } else if (userChoice === "bomb" ){
+    return "User wins through bomb";
+  }
+}
+
+const playGame = userChoice => {
+  return determineWinner(getUserChoice(userChoice), getComputerChoice());
+}
+
+console.log(playGame("bomb"));
