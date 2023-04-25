@@ -1,0 +1,38 @@
+const team = {
+  _players: [
+    {firstName: "Brandon", lastName: "Fox", age: 19},
+    {firstName: "Evan", lastName: "Buckley", age: 20},
+    {firstName: "James", lastName: "Jun", age: 22}
+  ],
+  _games: [
+    {opponent:'Stevens', teamPoints:3, opponentPoints:1},
+    {opponent:'Princeton',teamPoints:2,opponentPoints:3},
+    {opponent:'FSU',teamPoints:2,opponentPoints:1}
+  ],
+  get players() {
+    return this._players;
+  },
+  get games() {
+    return this._games;
+  },
+  addPlayer(newFirstName, newLastName, newAge) {
+    this._players.push(
+      {firstName: newFirstName,
+       lastName: newLastName,
+       age: newAge}
+    )
+  },
+  addGame(newOpponent, newTeamPoints, newOpponentPoints){
+    this._games.push(
+      {opponent: newOpponent,
+      teamPoints: newTeamPoints,
+      opponentPoints: newOpponentPoints}
+    )
+  }
+};
+
+team.addPlayer("Matt", "Voight", 21)
+console.log(team.players)
+
+team.addGame("RPI", 2, 2)
+console.log(team.games)
